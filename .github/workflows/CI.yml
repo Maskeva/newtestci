@@ -17,3 +17,8 @@ jobs:
       run: g++ -v
     - name: build
       run: g++ -o test.exe test.cpp
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+         name: test
+         path: test.exe
