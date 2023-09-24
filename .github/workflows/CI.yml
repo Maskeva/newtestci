@@ -17,6 +17,11 @@ jobs:
       - name:  test
         run: cmake --version
 
+      - name: cmake
+        run: cmake -S . -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+      - name: build
+        run: cmake --build build  
+
       # - name: Setup CMake
       #   uses: lukka/get-cmake@latest
 
@@ -50,8 +55,8 @@ jobs:
       #   run: g++ -o test.exe test.cpp
 
 
-      # - name: Upload Artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #    name: test
-      #    path: test.exe
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+         name: test
+         path: test.exe

@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 
-project(${PROJECT_NAME})
+project(test)
 
-add_executable(${PROJECT_NAME} main.cpp)
+set(CMAKE_BUILD_TYPE Release)
+
+add_executable(${PROJECT_NAME} test.cpp)
